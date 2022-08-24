@@ -15,4 +15,9 @@ class Payment extends Model
         'receipt_converted',
         'date'
     ];
+
+    public static function get($id = null){
+
+        return ($id) ? Payment::find($id) : Payment::all();
+    }
 }
