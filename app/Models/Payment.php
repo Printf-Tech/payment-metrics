@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Payment extends Model
 {
@@ -13,11 +14,16 @@ class Payment extends Model
         'receipt',
         'exchange_rate',
         'receipt_converted',
-        'date'
+        'date',
+        'user_id'
     ];
 
     public static function get($id = null){
 
         return ($id) ? Payment::find($id) : Payment::all();
+    }
+    public function user()
+    {
+        return $this->hasOne(User::class,'id','user_id');
     }
 }

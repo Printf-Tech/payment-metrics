@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,12 @@ use App\Http\Controllers\PaymentController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+/*Route::middleware('auth:sanctum')->get('/userw', function (Request $request) {
     return $request->user();
-});
+});*/
+
+Route::get('/user/{id?}', [UserController::class,'index']);
+Route::post('/user/storage', [UserController::class,'storage']);
 
 Route::get('/payment/{id?}', [PaymentController::class,'index']);
 Route::post('/payment/storage', [PaymentController::class,'storage']);

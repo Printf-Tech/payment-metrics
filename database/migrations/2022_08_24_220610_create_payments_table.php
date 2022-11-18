@@ -15,6 +15,7 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->double('receipt', 15, 8)->nullable()->default(0);
             $table->double('exchange_rate', 15, 8)->nullable()->default(0);
             $table->double('receipt_converted', 15, 8)->nullable()->default(0);

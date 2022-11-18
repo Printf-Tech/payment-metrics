@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Validator;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     //
     public function index($id = null){
 
-        $get = Payment::get($id);
-        return response()->json($get, 200);
+        $get = ($id) ? User::find($id) : User::all();
+        return response()->json($get->load('payment'), 200);
     }
 
     public function storage(Request $req){
@@ -28,9 +29,9 @@ class UserController extends Controller
             return response()->json($validator->errors()->toJson(), 400);
         }
 
-        $receipt_converted = ($req->receipt * $req->exchange_rate);
+        $password = Hash::make($req->password);
 
-        return response()->json(Payment::create(array_merge($validator->validated(),["receipt_converted" => $receipt_converted])), 201);
+        return response()->json(User::create(array_merge($validator->validated(),["password" => $password])), 201);
 
     }
 }
