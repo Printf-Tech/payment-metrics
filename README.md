@@ -1,4 +1,4 @@
-<p align="center"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ffortumo.com%2Fblog%2Fwhat-metrics-to-measure-for-your-payment-solutions%2F&psig=AOvVaw31Pg0uPYJbv_BsB9uDStvb&ust=1668817315985000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCKCVy7fItvsCFQAAAAAdAAAAABAD" width="400"></p>
+<p align="center"><img src="https://dc004ch99fgr4.cloudfront.net/blog/uploads/7-metrics-to-measure-with-digital-goods-payments.jpg" width="400"></p>
 
 
 ## Payment Metrics
